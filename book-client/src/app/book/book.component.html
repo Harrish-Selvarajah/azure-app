@@ -1,0 +1,54 @@
+<div class="book-class">
+    <div class="row">
+        <div class="col-md-4" id="divider">
+            <div class="form">
+                <h1>Add Book Form</h1>
+                <br>
+                <form #myform="ngForm" (ngSubmit)="addBook(myform)">
+                    <div class="row">
+                        <div class="col-6">
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Book Name</mat-label>
+                                <input name="Name" matInput placeholder="Placeholder" [(ngModel)]="Name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Author</mat-label>
+                                <input name="Author" matInput placeholder="Placeholder" [(ngModel)]="Author">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <button type="submit" id="submit-button" mat-raised-button>Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h1>Book List</h1>
+            <br>
+            <div class="books-table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Book Name</th>
+                            <th scope="col">Author</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let x of apiCalls.bookList">
+                        <tr>
+                            <td (click)="editBook(x)">{{x.Id}}</td>
+                            <td (click)="editBook(x)">{{x.Name}}</td>
+                            <td (click)="editBook(x)">{{x.Author}}</td>
+                            <button (click)="deleteBook(x.Id)" id="delete-button" mat-raised-button
+                                color="warn">Delete</button>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+.book-class {
+    padding: 58px 58px 58px 58px;
+}
+
+#divider {
+    border-right: 1px black solid;
+}
+
+#submit-button {
+    width: 511px;
+    border: 1px solid;
+}
+
+#delete-button {
+    margin-top: 6%;
+}
